@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <title>DOM FONT EFFECT 03</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <style type="text/css">
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body, html {
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+      }
+      .main {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .l-contents {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 2vw;
+        color: #FFF;
+        font-family: 'Montserrat', sans-serif;
+        /* display: none; */
+        user-select: none;
+        pointer-events: none;
+      }
+      .l-contents > .ttl {
+        font-size: 1.5vw;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        margin-bottom: 0.5vw;
+        margin-top: 5vw;
+      }
+      .l-contents > .desc {
+        font-size: 1vw;
+      }
+
+      .p-text {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        pointer-events: none;
+      }
+
+      .p-text .inner {
+        perspective: 550px;
+        transform-style: preserve-3d;
+      }
+
+      .p-text_tg.is-side {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .p-text .inner > .item {
+        overflow: hidden;
+        /* width: 100%; */
+        /* width: 50vw; */
+        /* background-color: red; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* transform-origin:  */
+      }
+
+      .p-text .inner > .item.is-side {
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+
+      .p-text .inner > .item > .text {
+        /* font-family: 'SourceSansVariableRoman', sans-serif; */
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20vw;
+        color: #FFF;
+        font-weight: 700;
+        width: auto;
+      }
+
+      @media screen and (max-width: 768px) {
+        .p-text .inner {
+          perspective: 350px;
+          transform-style: preserve-3d;
+        }
+
+        .l-contents > .desc {
+          font-size: 2vw;
+        }
+        .l-contents > .ttl {
+          font-size: 4vw;
+          margin-bottom: 1vw;
+        }
+        .l-contents {
+          padding-left: 5vw;
+          justify-content: flex-start;
+        }
+        .p-text .inner > .item > .text {
+          font-size: 20vw;
+        }
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <!-- <div class="p-text">
+      <div class="p-text_tg inner is-noside"></div>
+    </div> -->
+    <div class="p-text">
+      <div class="p-text_tg inner is-side"></div>
+    </div>
+    <div class="l-contents">
+      <p class="ttl">DOM FONT EFFECT 03</p>
+      <!-- <p class="desc">Let's Swipe</p> -->
+    </div>
+    <script src="mv.js"></script>
+  </body>
+</html>
